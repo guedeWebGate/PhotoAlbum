@@ -14,7 +14,7 @@ $PhotoAlbumUI-accent: mat-palette($mat-cyan, A200, A100, A400);
 // The warn palette is optional (defaults to red).
 $PhotoAlbumUI-warn: mat-palette($mat-pink);
 // Create the theme object (a Sass map containing all of the palettes).
-$PhotoAlbumUI-theme: mat-light-theme($PhotoAlbumUI-primary, $PhotoAlbumUI-accent, $PhotoAlbumUI-warn);
+$PhotoAlbumUI-theme: mat-light-theme( $PhotoAlbumUI-primary, $PhotoAlbumUI-accent, $PhotoAlbumUI-warn);
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -22,6 +22,13 @@ $PhotoAlbumUI-theme: mat-light-theme($PhotoAlbumUI-primary, $PhotoAlbumUI-accent
 
 /* You can add global styles to this file, and also import other style files */
 
+@import 'variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/grid';
+@import 'reset';
 html,
 body {
     height: 100%;
@@ -29,5 +36,5 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
