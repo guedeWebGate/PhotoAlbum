@@ -50,5 +50,10 @@ h1.example-app-name {
 }
 
 .header-title>h3 {
+    margin-top: 10px;
     padding-left: 15px;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }
