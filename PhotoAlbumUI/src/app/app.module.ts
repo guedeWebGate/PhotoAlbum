@@ -12,6 +12,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
 import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
@@ -29,6 +31,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
+    MatTableModule,
+    MatProgressBarModule,
     ReactiveFormsModule,
     FileUploadModule,
     BrowserAnimationsModule

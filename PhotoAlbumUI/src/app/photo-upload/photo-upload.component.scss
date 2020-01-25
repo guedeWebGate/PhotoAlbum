@@ -1,5 +1,9 @@
 .my-drop-zone {
     border: dotted 3px lightgray;
+    width: 100%;
+    height: 160px;
+    text-align: center;
+    line-height: 160px;
 }
 
 .nv-file-over {
@@ -14,5 +18,9 @@
 }
 
 .full-width-field {
+    width: 100%;
+}
+
+table {
     width: 100%;
 }

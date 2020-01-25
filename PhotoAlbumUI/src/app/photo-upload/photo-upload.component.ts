@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FileUploader } from 'ng2-file-upload';
+import { FileUploader, FileItem } from 'ng2-file-upload';
+import { MatTableDataSource } from '@angular/material/table';
 const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 @Component({
   selector: 'app-photo-upload',
@@ -12,6 +13,7 @@ export class PhotoUploadComponent implements OnInit {
   hasAnotherDropZoneOver: boolean;
   response: string;
   albums = [{ name: 'TEST', id: '2222' }];
+  displayedColumns: string[] = ['name', 'size', 'progress'];
   constructor() {
     this.uploader = new FileUploader({
       url: URL,
@@ -37,6 +39,9 @@ export class PhotoUploadComponent implements OnInit {
     this.uploader.response.subscribe(res => (this.response = res));
   }
 
+  getFiles(): MatTableDataSource<FileItem> {
+    return new MatTableDataSource(this.uploader.queue);
+  }
   public fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
   }
