@@ -11,6 +11,7 @@ export class PhotoUploadComponent implements OnInit {
   hasBaseDropZoneOver: boolean;
   hasAnotherDropZoneOver: boolean;
   response: string;
+  albums = [{ name: 'TEST', id: '2222' }];
   constructor() {
     this.uploader = new FileUploader({
       url: URL,
