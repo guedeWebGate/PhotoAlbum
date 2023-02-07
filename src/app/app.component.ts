@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class AppComponent implements OnDestroy, OnInit {
   title = 'PhotoAlbumUI';
   albumList = ['Reise hinter den Mond', 'Herbst 2020', 'Wichtel und Wachtel'];
 
-  albumCtrl: FormControl;
+  albumCtrl: UntypedFormControl;
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
@@ -27,7 +27,7 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this.albumCtrl = new FormControl('');
+    this.albumCtrl = new UntypedFormControl('');
   }
 
   ngOnDestroy(): void {
