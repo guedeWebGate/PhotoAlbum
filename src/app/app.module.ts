@@ -14,10 +14,23 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {
+  AwsAuthenticatorModule,
+  AWSCognitoConfig,
+  AuthGuard
+} from '@webgate/ngx-aws-authenticator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
 import { PhotoUploadComponent } from './photo-upload/photo-upload.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { environment } from 'src/environments/environment';
+
+const awsConfig: AWSCognitoConfig = {
+  userPoolId: environment.userPoolId,
+  clientId: environment.clientId,
+  allowRegister: false
+};
+
 @NgModule({
   declarations: [AppComponent, PhotoUploadComponent, DashboardComponent],
   imports: [
@@ -35,9 +48,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatProgressBarModule,
     ReactiveFormsModule,
     FileUploadModule,
+    AwsAuthenticatorModule.forRoot(awsConfig),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
